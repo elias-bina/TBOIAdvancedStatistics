@@ -1,3 +1,14 @@
+local game = Game()
+
+local Font10 = Font()
+Font10:Load("font/teammeatfont10.fnt")
+
+local Font12 = Font()
+Font12:Load("font/teammeatfont12.fnt")
+
+local Font16Bold = Font()
+Font16Bold:Load("font/teammeatfont16bold.fnt")
+
 
 AS.HUD = {
 	alpha = 1.0,
@@ -283,3 +294,9 @@ function AS:onHUDToggle()
 
 
 end
+
+
+-- Add HUD callbacks
+
+AS:AddCallback(ModCallbacks.MC_INPUT_ACTION, AS.onHUDToggle)
+AS:AddCallback(ModCallbacks.MC_POST_RENDER, AS.onRender)

@@ -72,18 +72,6 @@ AS.GLOBAL = {
 
 
 
-local Font10 = Font()
-Font10:Load("font/teammeatfont10.fnt")
-
-local Font12 = Font()
-Font12:Load("font/teammeatfont12.fnt")
-
-local Font16Bold = Font()
-Font16Bold:Load("font/teammeatfont16bold.fnt")
-
-
-
-
 function AS:onPlayerInit(player)
 	local room = game:GetLevel():GetCurrentRoom()
 	RoomConfig = {}
@@ -233,7 +221,7 @@ function AS:onPlayerInit(player)
 	-- Resets the HUD
 	AS.HUD.alpha = 1.0
 	AS.HUD.nb_of_tab_frames = 0
-	AS.HUD.timer_shown = false
+	AS.HUD	.timer_shown = false
 end
 
 AS:AddCallback(ModCallbacks.MC_POST_PLAYER_INIT, AS.onPlayerInit)
@@ -467,9 +455,5 @@ AS:AddCallback(ModCallbacks.MC_POST_NEW_ROOM, AS.onNewRoom)
 
 
 
--- Add HUD callbacks
-
-AS:AddCallback(ModCallbacks.MC_INPUT_ACTION, AS.onHUDToggle)
-AS:AddCallback(ModCallbacks.MC_POST_RENDER, AS.onRender)
 
 return AS
