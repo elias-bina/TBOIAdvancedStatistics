@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+    <name>Advanced Statistics</name>
+    <directory>advanced_statistics</directory>
+    <id>2494024575</id>
+    <description>[h1]DESCRIPTION[/h1]
+
+[b]Welcome to Advanced Statistics ![/b]
+
+A modulable mod allowing you to track your stats all along your run (and compare it to your other runs !)
+
+This mod is a little HUD that shows where the timer is, and uses a gradient of color to easily show your performance (red = bad, green = good)
+
+To enable / disable the HUD, press [TAB]/[MENU]/[SELECT] for 1.5 seconds
+
+For now these stats are tracked : 
+  - Accuracy : (Hits / Tears shot) %
+  - Level completion : (Rooms entered / Total rooms) %
+  - KillStreak : Number of ennemies killed without being hit (Color depends on your average of your Maximum KillStreak)
+  - RoomStreak : Number of rooms entered without being hit (Color depends on your average of  your Maximum RoomStreak) 
+  - TimeStreak : Time spend without being hit (Color depends on your average of  your Maximum TimeStreak)
+  - Hits taken : Number of hits taken (Color depends on your average of  Hits taken per level)	
+  - Ennemy killed : Number of ennemy killed (Color depends on your average of  Ennemy killed per level)
+
+[b]Tell me if you have any idea of additional stats, I can add them in future updates[/b]
+
+You can choose to enable extra information globally. For each stat, You can choose individually to disable the extra information (basically the global stats)
+
+You can also change the size of the GUD size (suggestion from solamon77)
+
+There are multiple languages curently available :
+  - English
+  - English Detailed
+  - French
+
+If you want to help me translating to an other language (or correct my poor english), contact me.
+
+
+[h1]HOW CAN I CHANGE THE SHOWN STATS ?[/h1]
+
+The mod is totally modulable and is fully compatible with Mod Config Menu : https://steamcommunity.com/sharedfiles/filedetails/?id=1603631350
+It's a simple menu that can help you with personalize the interface.
+
+Otherwise, you can edit the configuration file (as_config.lua in the mod folder) to change the shown stats.
+To avoid overflowing your screen, by default only two stats are printed on the base HUD and one when the timer is visible (and additional informations are hidden by default).
+The stats by default are :
+  - Accuracy, Hits taken (in the base HUD)
+  - Level completion (when the timer is visible)
+
+
+[h1]VERY IMPORTANT STUFF [/h1]
+
+- When printing the map, the mod interface may override the in-game timer (or being shown not on top of the screen) due to internal modding issues.
+If it occurs, hit [TAB]/[MENU]/[SELECT] for 10 seconds to solve the issue
+
+- Accuracy only works on tears. For multi-hit tears (like piercing and ludivico), every hit will be taken in account. Familiar tears also count.
+
+- This mod is not intended to be used in multiplayer, so you should disable it before. Otherwise, some stats may be broken
+
+- The stats are common for all characters, so the max streaks may be broken by invulnerability items such as the mantle of the lost
+
+
+[h1]TECHNICAL STUFF[/h1]
+
+
+-- Average computation
+
+Each run doesn't have the same weight. For example, finishing a run on the 4th floor will give your run a weight of 3 + X, where X is your level completion ratio.
+This computation was chosen because dying during the 1st floor should not be as important as a full run.
+And so, for the stats that are compared to the average, this average has been computed using mostly your best runs.
+
+
+[h1]CREDITS[/h1]
+
+A lot of my code (such as the way of setting config and language) is inspired from External Items Descriptions by WofSauge, so if you need an example for modding, I strongly advise you to look at this one (really good one mod, go spend your steams points there ;p):
+https://steamcommunity.com/sharedfiles/filedetails/?id=836319872&amp;searchtext=external+items
+
+Go look at the Modding of Isaac discord server, there is a lot of helpful stuff to learn making mods : https://discord.gg/JMaktQd
+</description>
+    <version>1.1</version>
+    <visibility>Public</visibility>
+    <tag id="Lua"/>
+    <tag id="Graphics"/>
+</metadata>
